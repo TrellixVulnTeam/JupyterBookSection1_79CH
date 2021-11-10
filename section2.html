@@ -90,7 +90,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Visualización de Datos con R y Python Sección 1
+   Pre-requisitos
   </a>
  </li>
 </ul>
@@ -392,7 +392,7 @@
 <div class="section" id="introduccion">
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>La mayoría de los conjuntos de datos generados en el mundo actual incluyen algunas características que representan aspectos espaciales o aspectos geográficos. Por ejemplo, los usuarios de las plataformas de medios sociales se caracterizan por las diferentes partes del mundo en las que residen, las métricas de desarrollo mundial se se calculan para diferentes países del mundo, las rutas de transporte que abarcan diferentes lugares del planeta, etc. Es esencial aprender aprender formas sistemáticas de entender y presentar esa información de forma digerible y a la vez perspicaz.</p></li>
+<li><p>La mayoría de los conjuntos de datos generados en el mundo actual incluyen algunas características que representan aspectos espaciales o aspectos geográficos. Por ejemplo, los usuarios de las plataformas de medios sociales se caracterizan por las diferentes partes del mundo en las que residen, las métricas de desarrollo mundial se se calculan para diferentes países del mundo, las rutas de transporte que abarcan diferentes lugares del planeta, etc. Es esencial aprender formas sistemáticas de entender y presentar esa información de forma digerible y a la vez perspicaz.</p></li>
 <li><p>Esta sección le ayudará a desarrollar esta capacidad proporcionando las herramientas necesarias para generar una variedad de gráficos que representen datos geográficos. Mientras que <code class="docutils literal notranslate"><span class="pre">altair</span></code> y <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> ofrecen interesantes posibilidades para visualizar datos geográficos datos geográficos, <code class="docutils literal notranslate"><span class="pre">plotly</span></code> es especialmente bueno para generar una variedad de gráficos geográficos que son fáciles de construir, depurar y personalizar. Por lo tanto, en este capítulo, utilizaremos plotly para demostrar la generación de diferentes clases de gráficos geográficos con múltiples conjuntos de datos disponibles públicamente de una variedad de contextos.</p></li>
 </ul>
 </div>
@@ -404,8 +404,8 @@
 <div class="section" id="ejercicio-45-creacion-de-un-mapa-coropletico">
 <h3>Ejercicio 45: Creación de un mapa coroplético<a class="headerlink" href="#ejercicio-45-creacion-de-un-mapa-coropletico" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>En la primera visualización de esta sección, vamos a utilizar las estadísticas de uso de Internet publicadas en Our World in Data (<a class="reference external" href="https://ourworldindata.org/internet">https://ourworldindata.org/internet</a>) y presentar el porcentaje de la población que utiliza Internet en cada país desde 1990 hasta 2017. ¿Se ha fijado en la característica llamada Código en el conjunto de datos? Se trata de un código asignado a cada país por una norma llamada ISO 3166-1. Se utiliza ampliamente para que los desarrolladores de todo el mundo tengan una forma común de referirse y acceder a los nombres de los países en cualquier dato.</p></li>
-<li><p>En este ejercicio, generaremos un mapa coroplético mundial utilizando el conjunto de datos Our World in Datos. Como el DataFrame contiene registros de varios años, primero vamos a subdividir los datos en un año específico, por ejemplo, 2016. A continuación, utilizaremos este subconjunto para generar un mapa mundial. Para ello, vamos a seguir los siguientes pasos</p></li>
+<li><p>En la primera visualización de esta sección, vamos a utilizar las estadísticas de uso de Internet publicadas en <a class="reference external" href="https://ourworldindata.org/internet">Our World in Data</a> y presentar el porcentaje de la población que utiliza Internet en cada país desde 1990 hasta 2017. ¿Se ha fijado en la característica llamada Código en el conjunto de datos? Se trata de un código asignado a cada país por una norma llamada ISO 3166-1. Se utiliza ampliamente para que los desarrolladores de todo el mundo tengan una forma común de referirse y acceder a los nombres de los países en cualquier dato.</p></li>
+<li><p>Como el DataFrame contiene registros de varios años, primero vamos a subdividir los datos en un año específico, por ejemplo, 2016. A continuación, utilizaremos este subconjunto para generar un mapa mundial. Para ello, vamos a seguir los siguientes pasos</p></li>
 </ul>
 <ul class="simple">
 <li><p>Importar los módulos de Python</p></li>
@@ -506,10 +506,10 @@
 <ul class="simple">
 <li><p>Para los siguientes pasos, vamos a utilizar el módulo express (por su simplicidad) de <code class="docutils literal notranslate"><span class="pre">plotly</span></code> y utilizar la función <code class="docutils literal notranslate"><span class="pre">choropleth</span></code> del módulo. El primer argumento que se pasa a esta función es el DataFrame que queremos visualizar. Los siguientes parámetros:</p>
 <ul>
-<li><p><em>locations</em>: Se establece como el nombre de la columna del DataFrame que contiene los códigos de país ISO 3166</p></li>
-<li><p><em>color</em>: Se establece el nombre de la columna que contiene la característica numérica con la que se va a colorear el mapa</p></li>
-<li><p><em>hover_name</em>: Se establece el nombre de la columna que contiene la característica que se mostrará al pasar el ratón por encima del mapa</p></li>
-<li><p><em>color_continuous_scale</em>: Esto se establece en un esquema de color, como: Blues | Reds | Greens | px.colors.sequential.Plasma.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">locations</span></code>: Se establece como el nombre de la columna del DataFrame que contiene los códigos de país ISO 3166</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: Se establece el nombre de la columna que contiene la característica numérica con la que se va a colorear el mapa</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hover_name</span></code>: Se establece el nombre de la columna que contiene la característica que se mostrará al pasar el ratón por encima del mapa</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color_continuous_scale</span></code>: Esto se establece en un esquema de color, como: Blues | Reds | Greens | px.colors.sequential.Plasma.</p></li>
 </ul>
 </li>
 <li><p>Genera un mapa coroplético mundial interactivo utilizando la función choropleth de la biblioteca <code class="docutils literal notranslate"><span class="pre">plotly</span></code></p></li>
@@ -1251,6 +1251,62 @@
 <ul class="simple">
 <li><p>Los mapas coropléticos son una forma eficaz de visualizar estadísticas agregadas en las divisiones de una región geográfica. Se pueden utilizar dos módulos de <code class="docutils literal notranslate"><span class="pre">plotly</span></code> express y <code class="docutils literal notranslate"><span class="pre">graph_objects</span></code> para generar mapas coropléticos interactivos. Los módulos mapean registros de de divisiones, como países y estados, a ubicaciones en mapas geográficos utilizando un sistema de nombres de códigos estandarizados de países y estados</p></li>
 </ul>
+<ul class="simple">
+<li><p>En el siguiente ejemplo podemos visualizar como podemos realizar un grafico que represente la cantidad de hectareas por departamento, para el caso de Colombia. Para sus proyectos de investigación es necesario que obtengan el archivo <code class="docutils literal notranslate"><span class="pre">Colombia.geo.json</span></code> con la información que se requiere</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+
+<span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/Colombia.geo.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+    <span class="n">counties</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+<span class="n">locs</span><span class="o">=</span><span class="p">[];</span> <span class="n">z_id</span><span class="o">=</span><span class="p">[];</span> <span class="n">id_q</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">counties</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">]:</span>
+    <span class="n">id_q</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">loc</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">loc</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">]</span>
+    <span class="n">locs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">])</span>
+    <span class="n">z_id</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;HECTARES&#39;</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Choroplethmapbox</span><span class="p">(</span>
+                    <span class="n">geojson</span><span class="o">=</span><span class="n">counties</span><span class="p">,</span>
+                    <span class="n">locations</span><span class="o">=</span><span class="n">locs</span><span class="p">,</span>
+                    <span class="n">z</span><span class="o">=</span><span class="n">z_id</span><span class="p">,</span>
+                    <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Viridis&#39;</span><span class="p">,</span>
+                    <span class="n">colorbar_title</span><span class="o">=</span><span class="s2">&quot;Hectareas&quot;</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_geos</span><span class="p">(</span><span class="n">showcountries</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showcoastlines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showland</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fitbounds</span><span class="o">=</span><span class="s2">&quot;locations&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">mapbox_style</span><span class="o">=</span><span class="s2">&quot;open-street-map&quot;</span><span class="p">,</span>
+                        <span class="n">mapbox_zoom</span><span class="o">=</span><span class="mf">3.6</span><span class="p">,</span>
+                        <span class="n">mapbox_center</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;lat&quot;</span><span class="p">:</span> <span class="mf">4.570868</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.2973328</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/section2_67_0.svg" src="_images/section2_67_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Choroplethmapbox</span><span class="p">(</span>
+                    <span class="n">geojson</span><span class="o">=</span><span class="n">counties</span><span class="p">,</span>
+                    <span class="n">locations</span><span class="o">=</span><span class="n">locs</span><span class="p">,</span>
+                    <span class="n">z</span><span class="o">=</span><span class="n">z_id</span><span class="p">,</span>
+                    <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Viridis&#39;</span><span class="p">,</span>
+                    <span class="n">colorbar_title</span><span class="o">=</span><span class="s2">&quot;Hectareas&quot;</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">mapbox_style</span><span class="o">=</span><span class="s2">&quot;white-bg&quot;</span><span class="p">,</span>
+                        <span class="n">mapbox_zoom</span><span class="o">=</span><span class="mf">3.6</span><span class="p">,</span>
+                        <span class="n">mapbox_center</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;lat&quot;</span><span class="p">:</span> <span class="mf">4.570868</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.2973328</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/section2_68_0.svg" src="_images/section2_68_0.svg" /></div>
+</div>
 </div>
 </div>
 <div class="section" id="graficos-sobre-mapas-geograficos">
@@ -1443,12 +1499,12 @@
     <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Walmart stores across world&#39;</span><span class="p">,</span>
     <span class="n">geo_scope</span><span class="o">=</span><span class="s1">&#39;usa&#39;</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">410</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_76_0.svg" src="_images/section2_76_0.svg" /></div>
+<img alt="_images/section2_79_0.svg" src="_images/section2_79_0.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>Una observación sorprendente es que Walmart es mucho más prominente en el este de los EE.UU. que en el oeste</p></li>
@@ -1700,12 +1756,12 @@
     <span class="c1"># limit plot scope to USA</span>
     <span class="n">geo_scope</span><span class="o">=</span><span class="s1">&#39;usa&#39;</span>
 <span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">410</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_87_0.svg" src="_images/section2_87_0.svg" /></div>
+<img alt="_images/section2_90_0.svg" src="_images/section2_90_0.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>¿Se te ocurre algún otro contexto en el que un gráfico de burbujas pueda ser útil para visualización? ¿Qué tal si revisamos los datos de uso de Internet (sobre los porcentajes de la población que utiliza Internet en cada país) para generar un gráfico de burbujas a nivel mundial?</p></li>
@@ -1883,12 +1939,12 @@
     <span class="n">title_text</span> <span class="o">=</span> <span class="s1">&#39;Internet users across the world - 2016&#39;</span><span class="p">,</span> <span class="c1"># set projection style for the plot</span>
     <span class="n">geo</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;natural earth&#39;</span><span class="p">})</span> <span class="c1"># by default, projection type is set to &#39;equirectangular&#39;</span>
 <span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">410</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_94_0.svg" src="_images/section2_94_0.svg" /></div>
+<img alt="_images/section2_97_0.svg" src="_images/section2_97_0.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>¿Notas que el mayor número de usuarios procede de India y China? Como sabemos por nuestro conjunto de datos anterior que el porcentaje de la población que utiliza Internet en estos países es bajo, este gran grupo de usuarios puede atribuirse a la población de estos países.</p></li>
@@ -1911,12 +1967,12 @@
     <span class="n">title_text</span> <span class="o">=</span> <span class="s1">&#39;Internet users across the world&#39;</span><span class="p">,</span> <span class="c1"># set projection style for the plot</span>
     <span class="n">geo</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;natural earth&#39;</span><span class="p">})</span> <span class="c1"># by default, projection type is set to &#39;equirectangular&#39;</span>
 <span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">410</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_96_0.svg" src="_images/section2_96_0.svg" /></div>
+<img alt="_images/section2_99_0.svg" src="_images/section2_99_0.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>Podemos ver en los dos gráficos anteriores cómo el número de usuarios de Internet aumentó entre 2001 y 2016 en Estados Unidos. Los gráficos de dispersión en los mapas pueden utilizarse para mostrar ubicaciones específicas de interés en los mapas geográficos, mientras que los mapas de burbujas son una buena forma de presentar los datos de recuento a través de diferentes fuentes.</p></li>
@@ -2051,12 +2107,12 @@
     <span class="n">showlegend</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">geo</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">Geo</span><span class="p">(</span><span class="n">scope</span> <span class="o">=</span> <span class="s1">&#39;usa&#39;</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">410</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_105_0.svg" src="_images/section2_105_0.svg" /></div>
+<img alt="_images/section2_108_0.svg" src="_images/section2_108_0.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>Al pasar el ratón por encima de un punto de datos, aparecerá el nombre del aeropuerto estadounidense. ¿Se ha dado cuenta de que hay una función <code class="docutils literal notranslate"><span class="pre">add_trace()</span></code> además de la habitual creación de instancias de la clase <code class="docutils literal notranslate"><span class="pre">Scattergeo</span></code>? La función <code class="docutils literal notranslate"><span class="pre">add_trace</span></code> se utiliza porque vamos a superponer nuestros datos de vuelo en forma de líneas sobre este gráfico de dispersión en el mapa. La función <code class="docutils literal notranslate"><span class="pre">add_trace</span></code> permite a <code class="docutils literal notranslate"><span class="pre">plotly</span></code> tratar el gráfico de dispersión y los trazados de líneas como múltiples capas en el mapa.</p></li>
@@ -2640,12 +2696,12 @@
         <span class="n">scope</span> <span class="o">=</span> <span class="s1">&#39;usa&#39;</span>
     <span class="p">),</span>
 <span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">410</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_114_0.svg" src="_images/section2_114_0.svg" /></div>
+<img alt="_images/section2_117_0.svg" src="_images/section2_117_0.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>Los trazados de líneas en los mapas geográficos pueden ser generados usando el módulo <code class="docutils literal notranslate"><span class="pre">graph_objects</span></code> de <code class="docutils literal notranslate"><span class="pre">plotly</span></code>.</p></li>
@@ -2728,7 +2784,8 @@ $<span class="math notranslate nohighlight">\(\Phi(B)=1-\sum_{i=1}^{p}\phi_{i}B^
 <ul class="simple">
 <li><p>Para hacer uso de la <strong>API</strong> de <code class="docutils literal notranslate"><span class="pre">finnhub</span></code>, debes crear una cuenta en su sitio web utilizando el correo de tu preferencia. Al crear tu cuenta automáticamente se generará una <strong>API Key</strong> que te permitirá ha cer uso de la <strong>API</strong>. Esta <strong>API Key</strong> es privada, la puedes volver a generar si la pierdes o si si está siendo usada por otra persona. La siguiente es una imágen del <strong>Dashboard</strong> de <code class="docutils literal notranslate"><span class="pre">finnhub</span></code> donde aparece tu <strong>API Key</strong>. Puedes hacer uso de <strong>Sandbox API Key</strong> para reducir el coste y el riesgo asociados a las llamadas a <strong>API</strong> de terceros durante los tests y permitir el desarrollo simultáneos para acelerar los ciclos de desarrollo de aplicaciones y reducir el <em>time-to-market</em>. Se utiliza para probar programas sospechosos que pueden contener virus u otro malware, sin permitir que el software dañe los dispositivos anfitriones. También puede usar el <strong>Webhook</strong> de <code class="docutils literal notranslate"><span class="pre">finnhub</span></code>, como método de alteración del funcionamiento de una página o aplicación web, con callbacks personalizados. Es esta sección utlizaremos sólo la <strong>API Key</strong>, el resto de funcionalidades las podrá experimentar en los informes o proyectos finales. Para mas información acerca de la <strong>API</strong> de <code class="docutils literal notranslate"><span class="pre">finnhub</span></code> visitar la documentación correspondiente en su sitio web: <a class="reference external" href="https://finnhub.io/docs/api">https://finnhub.io/docs/api</a></p></li>
 </ul>
-<img src = "figures/API.png"><ul class="simple">
+<p><img alt="" src="_images/API.png" /></p>
+<ul class="simple">
 <li><p>Para usar la <strong>API</strong> de <code class="docutils literal notranslate"><span class="pre">finnhub</span></code> desde su notebook, deberá primero instalar usando el gestor de instalación <strong>pip</strong> la librería de <strong>Python</strong> requerida para hacer uso de la <strong>API</strong> usando la orden: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">finnhub-python</span></code>. Luego de hacer esto puede comenzar a usar las diferentes funciones públicas asociadas a la clase <code class="docutils literal notranslate"><span class="pre">finnhub</span></code> que importamos desde <strong>Python</strong> luego de la isntalación. También importaremos librería para conversiones de <code class="docutils literal notranslate"><span class="pre">unix</span> <span class="pre">time</span></code> a <code class="docutils literal notranslate"><span class="pre">datetime</span></code> que realizará conversiones a un formato de fecha conocido, a saber: año, mes, día <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span></code>. Las librerías <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> y <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> ya usadas en anteriores secciones también son importadas para realizar los gráficos correspondientes</p></li>
 </ul>
 <div class="cell docutils container">
@@ -2836,53 +2893,53 @@ $<span class="math notranslate nohighlight">\(\Phi(B)=1-\sum_{i=1}^{p}\phi_{i}B^
   <tbody>
     <tr>
       <th>0</th>
-      <td>116.32</td>
-      <td>121.9900</td>
-      <td>116.05</td>
-      <td>120.50</td>
-      <td>ok</td>
-      <td>1604880000</td>
-      <td>154515315</td>
-    </tr>
-    <tr>
-      <th>1</th>
       <td>115.97</td>
       <td>117.5900</td>
-      <td>114.13</td>
+      <td>114.130</td>
       <td>115.55</td>
       <td>ok</td>
       <td>1604966400</td>
       <td>138023390</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>1</th>
       <td>119.49</td>
       <td>119.6300</td>
-      <td>116.44</td>
+      <td>116.440</td>
       <td>117.19</td>
       <td>ok</td>
       <td>1605052800</td>
       <td>112294954</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>2</th>
       <td>119.21</td>
       <td>120.5300</td>
-      <td>118.57</td>
+      <td>118.570</td>
       <td>119.62</td>
       <td>ok</td>
       <td>1605139200</td>
       <td>103350674</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>3</th>
       <td>119.26</td>
       <td>119.6717</td>
-      <td>117.87</td>
+      <td>117.870</td>
       <td>119.44</td>
       <td>ok</td>
       <td>1605225600</td>
       <td>81688586</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>120.30</td>
+      <td>120.9900</td>
+      <td>118.146</td>
+      <td>118.92</td>
+      <td>ok</td>
+      <td>1605484800</td>
+      <td>91183018</td>
     </tr>
   </tbody>
 </table>
@@ -2949,53 +3006,53 @@ $<span class="math notranslate nohighlight">\(\Phi(B)=1-\sum_{i=1}^{p}\phi_{i}B^
   <tbody>
     <tr>
       <th>0</th>
-      <td>116.32</td>
-      <td>121.9900</td>
-      <td>116.05</td>
-      <td>120.50</td>
-      <td>ok</td>
-      <td>2020-11-08</td>
-      <td>154515315</td>
-    </tr>
-    <tr>
-      <th>1</th>
       <td>115.97</td>
       <td>117.5900</td>
-      <td>114.13</td>
+      <td>114.130</td>
       <td>115.55</td>
       <td>ok</td>
       <td>2020-11-09</td>
       <td>138023390</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>1</th>
       <td>119.49</td>
       <td>119.6300</td>
-      <td>116.44</td>
+      <td>116.440</td>
       <td>117.19</td>
       <td>ok</td>
       <td>2020-11-10</td>
       <td>112294954</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>2</th>
       <td>119.21</td>
       <td>120.5300</td>
-      <td>118.57</td>
+      <td>118.570</td>
       <td>119.62</td>
       <td>ok</td>
       <td>2020-11-11</td>
       <td>103350674</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>3</th>
       <td>119.26</td>
       <td>119.6717</td>
-      <td>117.87</td>
+      <td>117.870</td>
       <td>119.44</td>
       <td>ok</td>
       <td>2020-11-12</td>
       <td>81688586</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>120.30</td>
+      <td>120.9900</td>
+      <td>118.146</td>
+      <td>118.92</td>
+      <td>ok</td>
+      <td>2020-11-15</td>
+      <td>91183018</td>
     </tr>
   </tbody>
 </table>
@@ -3047,48 +3104,48 @@ $<span class="math notranslate nohighlight">\(\Phi(B)=1-\sum_{i=1}^{p}\phi_{i}B^
   <tbody>
     <tr>
       <th>0</th>
-      <td>116.32</td>
-      <td>121.9900</td>
-      <td>116.05</td>
-      <td>120.50</td>
-      <td>2020-11-08</td>
-      <td>154515315</td>
-    </tr>
-    <tr>
-      <th>1</th>
       <td>115.97</td>
       <td>117.5900</td>
-      <td>114.13</td>
+      <td>114.130</td>
       <td>115.55</td>
       <td>2020-11-09</td>
       <td>138023390</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>1</th>
       <td>119.49</td>
       <td>119.6300</td>
-      <td>116.44</td>
+      <td>116.440</td>
       <td>117.19</td>
       <td>2020-11-10</td>
       <td>112294954</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>2</th>
       <td>119.21</td>
       <td>120.5300</td>
-      <td>118.57</td>
+      <td>118.570</td>
       <td>119.62</td>
       <td>2020-11-11</td>
       <td>103350674</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>3</th>
       <td>119.26</td>
       <td>119.6717</td>
-      <td>117.87</td>
+      <td>117.870</td>
       <td>119.44</td>
       <td>2020-11-12</td>
       <td>81688586</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>120.30</td>
+      <td>120.9900</td>
+      <td>118.146</td>
+      <td>118.92</td>
+      <td>2020-11-15</td>
+      <td>91183018</td>
     </tr>
   </tbody>
 </table>
@@ -3110,7 +3167,7 @@ $<span class="math notranslate nohighlight">\(\Phi(B)=1-\sum_{i=1}^{p}\phi_{i}B^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_155_0.png" src="_images/section2_155_0.png" />
+<img alt="_images/section2_158_0.png" src="_images/section2_158_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -3142,7 +3199,7 @@ $<span class="math notranslate nohighlight">\(\Phi(B)=1-\sum_{i=1}^{p}\phi_{i}B^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_157_0.svg" src="_images/section2_157_0.svg" /></div>
+<img alt="_images/section2_160_0.svg" src="_images/section2_160_0.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>Utilizaremos ahora una prueba estadística para verificar si la serie de tiempo es estacionaria o no. Esta prueba es la de  <code class="docutils literal notranslate"><span class="pre">Dickey-Fuller</span></code>. En cursos avanzados de <strong>series de tiempo</strong> se estudia estadísticamente éste tipo de pruebas así como los plots <strong>ACF</strong> y <strong>PACF</strong>, en esta sección sólo mencionaremos en una bastante resumida la idea detras de su uso. Para hacer uso de esta prueba importamos la función <code class="docutils literal notranslate"><span class="pre">adfuller</span></code> de la clase <code class="docutils literal notranslate"><span class="pre">statsmodels.tsa.stattools</span></code>. Para aplicar el test pasamos los datos del precio de cierre, serie de tiempo de interés, usando <code class="docutils literal notranslate"><span class="pre">AAPL_df.Close</span></code>. Éste será el argumento de la función <code class="docutils literal notranslate"><span class="pre">adfuller</span></code> encargada de realizar el test de <code class="docutils literal notranslate"><span class="pre">Dickey-Fuller</span></code></p></li>
@@ -3164,8 +3221,8 @@ $<span class="math notranslate nohighlight">\(\Phi(B)=1-\sum_{i=1}^{p}\phi_{i}B^
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ADF Statistic: -1.651440
-p-value: 0.456290
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ADF Statistic: -1.669549
+p-value: 0.446866
 </pre></div>
 </div>
 </div>
@@ -3203,7 +3260,7 @@ p-value: 0.456290
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_164_0.png" src="_images/section2_164_0.png" />
+<img alt="_images/section2_167_0.png" src="_images/section2_167_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -3279,7 +3336,7 @@ test_1w: (7,)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aic: 1053.04714 | order: (3, 1, 3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aic: 1054.75872 | order: (0, 1, 1)
 </pre></div>
 </div>
 </div>
@@ -3308,16 +3365,16 @@ test_1w: (7,)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Performing stepwise search to minimize aic
- ARIMA(1,1,1)(0,0,0)[0] intercept   : AIC=1055.416, Time=0.20 sec
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ARIMA(0,1,0)(0,0,0)[0] intercept   : AIC=1052.055, Time=0.02 sec
- ARIMA(1,1,0)(0,0,0)[0] intercept   : AIC=1053.830, Time=0.03 sec
- ARIMA(0,1,1)(0,0,0)[0] intercept   : AIC=1053.822, Time=0.04 sec
- ARIMA(0,1,0)(0,0,0)[0]             : AIC=1051.306, Time=0.02 sec
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ARIMA(1,1,1)(0,0,0)[0] intercept   : AIC=inf, Time=0.42 sec
+ ARIMA(0,1,0)(0,0,0)[0] intercept   : AIC=1053.968, Time=0.01 sec
+ ARIMA(1,1,0)(0,0,0)[0] intercept   : AIC=1055.604, Time=0.03 sec
+ ARIMA(0,1,1)(0,0,0)[0] intercept   : AIC=1055.591, Time=0.03 sec
+ ARIMA(0,1,0)(0,0,0)[0]             : AIC=1053.049, Time=0.02 sec
 
 Best model:  ARIMA(0,1,0)(0,0,0)[0]          
-Total fit time: 0.320 seconds
+Total fit time: 0.527 seconds
 </pre></div>
 </div>
 </div>
@@ -3351,7 +3408,7 @@ Total fit time: 0.320 seconds
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x576 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="_images/section2_177_2.png" src="_images/section2_177_2.png" />
+<img alt="_images/section2_180_2.png" src="_images/section2_180_2.png" />
 </div>
 </div>
 <ul class="simple">
@@ -3409,25 +3466,13 @@ Total fit time: 0.320 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predicted=152.662026, expected=149.800000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predicted=149.785056, expected=148.960000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predicted=148.636426, expected=150.020000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predicted=149.622634, expected=151.490000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predicted=151.060422, expected=150.960000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predicted=150.917737, expected=151.280000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predicted=151.328948, expected=150.440000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predicted=149.892930, expected=148.960000
+predicted=148.990502, expected=150.020000
+predicted=149.985106, expected=151.490000
+predicted=151.441220, expected=150.960000
+predicted=150.975929, expected=151.280000
+predicted=151.269874, expected=150.440000
+predicted=150.467837, expected=150.810000
 </pre></div>
 </div>
 </div>
@@ -3469,10 +3514,10 @@ Total fit time: 0.320 seconds
   <tbody>
     <tr>
       <th>week 1</th>
-      <td>1.184236</td>
-      <td>2.172113</td>
-      <td>0.007855</td>
-      <td>1.473809</td>
+      <td>0.77495</td>
+      <td>0.760676</td>
+      <td>0.00516</td>
+      <td>0.872167</td>
     </tr>
   </tbody>
 </table>
@@ -3488,7 +3533,7 @@ Total fit time: 0.320 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_186_0.png" src="_images/section2_186_0.png" />
+<img alt="_images/section2_189_0.png" src="_images/section2_189_0.png" />
 </div>
 </div>
 </div>
@@ -3653,7 +3698,7 @@ Total fit time: 0.320 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_208_0.svg" src="_images/section2_208_0.svg" /></div>
+<img alt="_images/section2_211_0.svg" src="_images/section2_211_0.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>La escala del eje <span class="math notranslate nohighlight">\(y\)</span> es extrañamente grande, ya que todos los gráficos de caja están comprimidos en la octava parte inferior del gráfico, por lo que no representa una visualización clara de los datos. Esto se debe al valor atípico en la cuarta instancia de nuestro <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <strong>790 kg</strong></p></li>
@@ -3947,7 +3992,7 @@ Total fit time: 0.320 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_232_0.svg" src="_images/section2_232_0.svg" /></div>
+<img alt="_images/section2_235_0.svg" src="_images/section2_235_0.svg" /></div>
 </div>
 <p><strong>Imputación por medio de la <em>media, mediana o moda</em></strong></p>
 <ul class="simple">
@@ -4042,7 +4087,7 @@ Total fit time: 0.320 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_236_0.svg" src="_images/section2_236_0.svg" /></div>
+<img alt="_images/section2_239_0.svg" src="_images/section2_239_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="ejercicio-54-tratamiento-de-los-valores-faltantes">
@@ -4295,7 +4340,7 @@ Total fit time: 0.320 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_248_0.svg" src="_images/section2_248_0.svg" /></div>
+<img alt="_images/section2_251_0.svg" src="_images/section2_251_0.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>Ahora, el valor del peso mínimo es 21, lo que tiene más sentido. Sin embargo, nuestro conteo se ha reducido a 55 de 62, lo que significa que hemos eliminado 7 instancias de nuestro conjunto de datos. Esto puede parecer pequeño en este ejemplo, pero en realidad, esto puede tener repercusiones serias en la información obtenida.</p></li>
@@ -4416,7 +4461,7 @@ Total fit time: 0.320 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_257_0.svg" src="_images/section2_257_0.svg" /></div>
+<img alt="_images/section2_260_0.svg" src="_images/section2_260_0.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>Ahora, tenemos una visualización que no tiene valores perdidos y representa todas las instancias que están presentes en el conjunto de datos. Veamos el tercer problema que puede generar una visualización defectuosa.</p></li>
@@ -5454,7 +5499,7 @@ Operation done successfully
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/section2_329_0.svg" src="_images/section2_329_0.svg" /></div>
+<img alt="_images/section2_332_0.svg" src="_images/section2_332_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="id3">

@@ -1,9 +1,18 @@
-# Visualización de Datos con R y Python Sección 1
+<center> 
+<h1>
+Visualización de Datos con R y Python</br>
+Departamento de Matemáticas y Estadística</br>
+Maestría en Estadística Aplicada</br>
+Lihki Rubio
+</h1>
+</center>
 
 ```{image} figures/logo_uninorte.png
 :width: 300px
 :align: center
 ```
-# Departamento de Matemáticas y Estadística
-# Maestría en Estadística Aplicada
-# Profesor: Lihki Rubio
+
+# Pre-requisitos
+- Conocimientos básicos de R y Python
+- Estadística Matemática
+- Modelos Lineales
